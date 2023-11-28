@@ -8,3 +8,4 @@ Go to your terminal and go to Gitbash
 Terminal Commands
 git status
 git add .
+git commit -m "Picture save"
