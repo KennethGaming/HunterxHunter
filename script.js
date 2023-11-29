@@ -1,6 +1,7 @@
 let card1;
 let card2;
 let clicks =1;
+let score =0;
 //when we click cards
 document.addEventListener("click", function(event){
     //console.log(event.target.alt)
@@ -31,9 +32,15 @@ document.addEventListener("click", function(event){
             
             if (card1.alt == card2.alt) {
                 console.log ("That's a match!!!");
+                score = score+1
                 //Play sound
-                let right= new Audio("ding-sound-effect.mp3");
+                let right= new Audio("correct.mp3");
                 right.play()
+                if (score ==8){
+                   let win= new Audio ("street-fighter-ii-you-win-perfect.mp3")
+                   win.play()
+                }
+                
                 
 
             }else {
@@ -61,3 +68,7 @@ document.querySelectorAll("img").forEach(function(card){
    
     card.style.order = Math.round(Math.random()*100);
 })
+
+function Reload(){
+    location.reload()
+}
